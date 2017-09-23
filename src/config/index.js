@@ -18,12 +18,12 @@ const config = {
       },
       {
         id: "blogger",
-        path: "/aa/01",
+        path: "/blogger/01博評",
         text: "01博評"
       },
       {
         id: "tech",
-        path: "/login",
+        path: "/channel/科技玩物",
         text: "科技玩物"
       }
     ]
