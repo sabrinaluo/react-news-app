@@ -5,11 +5,11 @@ import { NavLink } from "react-router-dom";
 const HeaderMid = () => (
   <div className="menu__mid">
     <div className="wrapper">
-      <a href="/">
+      <NavLink to="/">
         <div className="float_left" id="logo">
           <img src="//cdn.hk01.com/assets/images/logo.png" alt="香港01" />
         </div>
-      </a>
+      </NavLink>
     </div>
   </div>
 );

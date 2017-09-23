@@ -5,8 +5,6 @@ import HeaderMid from "./HeaderMid";
 import HeaderNav from "./HeaderNav";
 import HeaderSticky from "./HeaderSticky";
 
-import { enableHeaderSticky } from "../actions";
-
 const defaultProps = {
   items: []
 };
@@ -19,11 +17,8 @@ const propTypes = {
 };
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
-    const { isSticky, enableHeaderSticky, disableHeaderSticky } = this.props;
+    const { enableHeaderSticky, disableHeaderSticky } = this.props;
     window.onscroll = () => {
       if (window.scrollY > 80) {
         enableHeaderSticky();
