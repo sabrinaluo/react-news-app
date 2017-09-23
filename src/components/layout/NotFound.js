@@ -1,14 +1,11 @@
-import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React from "react";
 
-class PageNotFound extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    return <p>Sorry the page you are looking for is under construction :) </p>;
-  }
-}
+const PageNotFound = () => (
+  <section>
+    <div className="wrapper">
+      <p>Sorry the page you are looking for is under construction :) </p>
+    </div>
+  </section>
+);
 
 export default PageNotFound;
