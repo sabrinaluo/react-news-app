@@ -1,13 +1,21 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 
+import ArticleListContainer from "../../containers/ArticleListContainer";
+
 const propTypes = {};
 
 const defaultProps = {};
 
 class Home extends Component {
   render() {
-    return <div>home page</div>;
+    return (
+      <section>
+        <div className="wrapper">
+          <ArticleListContainer />
+        </div>
+      </section>
+    );
   }
 }
 
