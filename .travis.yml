@@ -16,6 +16,7 @@ before_script:
 - git config --global user.name 'Sabrina Luo'
 - git config --global user.email 'luohaojing@gmail.com'
 script:
-- npm run build
+- yarn run build
 after_success:
-- npm run deploy
+- git remote set-url origin git@github.com:sabrinaluo/react-news-app.git
+- yarn run deploy
