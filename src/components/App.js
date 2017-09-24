@@ -9,7 +9,7 @@ import Login from "./layout/Login";
 import Signup from "./layout/Signup";
 import Welcome from "./layout/Welcome";
 import LogoutContainer from "../containers/LogoutContainer";
-
+import { BASE_HREF } from "../constants";
 class App extends Component {
   render() {
     return (
@@ -18,11 +18,12 @@ class App extends Component {
           <div>
             <HeaderContainer items={config.header.nav} />
             <Switch>
+              <Route path={BASE_HREF} exact component={Home} />
               <Route path="/" exact component={Home} />
-              <Route path="/login" exact component={Login} />
-              <Route path="/signup" exact component={Signup} />
-              <Route path="/welcome" exact component={Welcome} />
-              <Route path="/logout" exact component={LogoutContainer} />
+              <Route path="/login" component={Login} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/welcome" exct component={Welcome} />
+              <Route path="/logout" component={LogoutContainer} />
               <Route path="*" component={NotFound} />
             </Switch>
           </div>
