@@ -4,7 +4,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import config from "../config";
 import HeaderContainer from "../containers/HeaderContainer";
 import NotFound from "./layout/NotFound";
-import HomeContainer from "../containers/HomeContainer";
+import Home from "./layout/Home";
+import Login from "./layout/Login";
+import Welcome from "./layout/Welcome";
+import LogoutContainer from "../containers/LogoutContainer";
 
 class App extends Component {
   render() {
@@ -14,7 +17,10 @@ class App extends Component {
           <div>
             <HeaderContainer items={config.header.nav} />
             <Switch>
-              <Route path="/" exact component={HomeContainer} />
+              <Route path="/" exact component={Home} />
+              <Route path="/login" exact component={Login} />
+              <Route path="/welcome" exact component={Welcome} />
+              <Route path="/logout" exact component={LogoutContainer} />
               <Route path="*" component={NotFound} />
             </Switch>
           </div>

@@ -5,15 +5,19 @@ import HeaderMid from "./HeaderMid";
 import HeaderNav from "./HeaderNav";
 import HeaderSticky from "./HeaderSticky";
 
-const defaultProps = {
-  items: []
-};
-
 const propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   isSticky: PropTypes.bool,
+  isLogin: PropTypes.bool,
+  username: PropTypes.string,
   enableHeaderSticky: PropTypes.func,
   disableHeaderSticky: PropTypes.func
+};
+
+const defaultProps = {
+  items: []
+  //  isLogin: true,
+  //username: ""
 };
 
 class Header extends Component {
@@ -28,10 +32,10 @@ class Header extends Component {
     };
   }
   render() {
-    const { items, isSticky } = this.props;
+    const { items, isSticky, isLogin, username } = this.props;
     return (
       <header>
-        <HeaderTop />
+        <HeaderTop isLogin={isLogin} username={username} />
         <HeaderMid />
         <HeaderNav items={items} />
         <HeaderSticky items={items} isSticky={isSticky} />

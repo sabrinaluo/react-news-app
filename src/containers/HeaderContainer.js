@@ -7,9 +7,11 @@ import { enableHeaderSticky, disableHeaderSticky } from "../actions";
 const HeaderContainer = props => <Header {...props} />;
 
 const mapStateToProps = state => {
-  const { header } = state;
+  const { header, user } = state;
   return {
-    isSticky: header.isSticky
+    isSticky: header.isSticky,
+    isLogin: user.isLogin,
+    username: user.username
   };
 };
 
