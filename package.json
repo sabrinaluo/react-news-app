@@ -1,6 +1,12 @@
 {
   "name": "react-news-app",
   "version": "0.1.0",
+  "author": "Sabrina Luo <luohaojing@gmail.com>",
+  "homepage": "http://sabrinaluo.github.io/react-news-app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sabrinaluo/react-news-app.git"
+  },
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
