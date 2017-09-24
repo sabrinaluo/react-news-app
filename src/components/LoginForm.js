@@ -37,16 +37,21 @@ class LoginForm extends Component {
       <div>
         <h3>Login</h3>
         <form onSubmit={this.onSubmitHandler.bind(this)} id="login">
-          <label htmlFor="username"> Username </label>
-          <input type="email" id="username" placeholder="username" required />
-          <label htmlFor="password"> Password </label>
-          <input
-            type="password"
-            id="password"
-            placeholder="password"
-            required
-            minLength="8"
-          />
+          <div>
+            <label htmlFor="username"> Username </label>
+            <input type="email" id="username" placeholder="username" required />
+          </div>
+          <div>
+            <label htmlFor="password"> Password </label>
+            <input
+              type="password"
+              id="password"
+              placeholder="password"
+              required
+              minLength="6"
+              maxLength="12"
+            />
+          </div>
           <input type="submit" />
         </form>
         {this.renderErrorMessage()}
