@@ -5,7 +5,7 @@ class Welcome extends Component {
     return (
       <section>
         <div className="wrapper">
-          <p>login success! enjoy your journey with us!</p>
+          <p>success! enjoy your journey with us!</p>
         </div>
       </section>
     );
