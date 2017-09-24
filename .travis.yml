@@ -15,6 +15,7 @@ before_install:
 before_script:
 - git config --global user.name 'Sabrina Luo'
 - git config --global user.email 'luohaojing@gmail.com'
+- yarn test
 script:
 - yarn run build
 after_success:
