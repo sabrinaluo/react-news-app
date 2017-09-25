@@ -1,6 +1,6 @@
 # react-news-app [![Build Status](https://travis-ci.org/sabrinaluo/react-news-app.svg?branch=master)](https://travis-ci.org/sabrinaluo/react-news-app)
 
-Live Demo: http://sabrinaluo.com/react-news/app
+Live Demo: http://sabrinaluo.com/react-news-app
 
 Please note it may take a while to awake the API hosted on heroku due to its [sleeping policy](https://devcenter.heroku.com/articles/free-dyno-hours#dyno-sleeping).
 
