@@ -27,7 +27,7 @@ class LoginForm extends Component {
   }
 
   render() {
-    const { errorMessage, isLogin } = this.props;
+    const { isLogin } = this.props;
 
     if (isLogin) {
       return <Redirect to="/welcome" />;

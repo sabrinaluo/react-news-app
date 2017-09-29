@@ -2,7 +2,8 @@ language: node_js
 node_js:
 - 6.9.1
 env:
-  - CI=false
+  global:
+
 branches:
   only:
   - master
@@ -15,9 +16,10 @@ before_install:
 before_script:
 - git config --global user.name 'Sabrina Luo'
 - git config --global user.email 'luohaojing@gmail.com'
-- yarn test
+- yarn test -- --covreage
 script:
 - yarn run build
 after_success:
+- bash <(curl -s https://codecov.io/bash) # upload coverage report
 - git remote set-url origin git@github.com:sabrinaluo/react-news-app.git
 - yarn run deploy

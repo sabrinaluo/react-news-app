@@ -1,5 +1,5 @@
 import reducer from "./articles";
-import * as types from "../actions";
+import * as types from "../constants/ActionTypes";
 
 describe("article reducer", () => {
   it("should have initial state", () => {
@@ -34,7 +34,7 @@ describe("article reducer", () => {
       )
     ).toEqual({
       isFetching: true,
-      page: 667
+      nextPage: 667
     });
   });
 
@@ -51,6 +51,21 @@ describe("article reducer", () => {
       isFetching: false,
       nextPage: 1,
       items: [{ a: 1 }, { b: 2 }, { c: 3 }]
+    });
+  });
+
+  it("should not update articles", () => {
+    expect(
+      reducer(
+        { items: [{ a: 1 }] },
+        {
+          type: types.FETCH_ARTICLES_ERROR,
+          error: "ERROR"
+        }
+      )
+    ).toEqual({
+      isFetching: false,
+      items: [{ a: 1 }]
     });
   });
 });
