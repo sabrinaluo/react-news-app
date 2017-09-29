@@ -1,4 +1,4 @@
-# react-news-app [![Build Status](https://travis-ci.org/sabrinaluo/react-news-app.svg?branch=master)](https://travis-ci.org/sabrinaluo/react-news-app)
+# react-news-app [![Build Status](https://travis-ci.org/sabrinaluo/react-news-app.svg?branch=master)](https://travis-ci.org/sabrinaluo/react-news-app) [![codecov](https://codecov.io/gh/sabrinaluo/react-news-app/branch/master/graph/badge.svg)](https://codecov.io/gh/sabrinaluo/react-news-app)
 
 Live Demo: http://sabrinaluo.com/react-news-app
 
