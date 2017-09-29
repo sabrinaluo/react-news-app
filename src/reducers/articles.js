@@ -1,9 +1,4 @@
-import {
-  FETCH_ARTICLES_REQUEST,
-  FETCH_ARTICLES_SUCCESS,
-  FETCH_ARTICLES_ERROR,
-  INFINITE_LOADING_START
-} from "../actions/articles";
+import * as types from "../constants/ActionTypes";
 
 const initialState = {
   isFetching: false,
@@ -13,23 +8,23 @@ const initialState = {
 
 function articles(state = initialState, action) {
   switch (action.type) {
-    case FETCH_ARTICLES_REQUEST:
+    case types.FETCH_ARTICLES_REQUEST:
       return Object.assign({}, state, {
         isFetching: true,
-        page: action.page + 1
+        nextPage: action.page + 1
       });
-    case FETCH_ARTICLES_SUCCESS:
+    case types.FETCH_ARTICLES_SUCCESS:
       return Object.assign({}, state, {
         isFetching: false,
         items: [...state.items, ...action.response.articles],
         nextPage: action.response.nextPage
       });
-    case FETCH_ARTICLES_ERROR:
+    case types.FETCH_ARTICLES_ERROR:
       return Object.assign({}, state, {
         isFetching: false,
-        items: []
+        items: [...state.items]
       });
-    case INFINITE_LOADING_START:
+    case types.INFINITE_LOADING_START:
       return Object.assign({}, state, {
         isFetching: true
       });

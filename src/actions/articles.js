@@ -1,48 +1,46 @@
-import fetch from "isomorphic-fetch";
+import axios from "axios";
 
 import { API_ROOT } from "../constants";
+import * as types from "../constants/ActionTypes";
 import { timeoutPromise } from "../utils";
 
-export const FETCH_ARTICLES_REQUEST = "FETCH_ARTICLES_REQUEST";
-export const FETCH_ARTICLES_SUCCESS = "FETCH_ARTICLES_SUCCESS";
-export const FETCH_ARTICLES_ERROR = "FETCH_ARTICLES_ERROR";
-export const INFINITE_LOADING_START = "INFINITE_LOADING_START";
-
 export const fetchArticlesRequest = page => ({
-  type: FETCH_ARTICLES_REQUEST,
+  type: types.FETCH_ARTICLES_REQUEST,
   page
 });
 
 export const fetchArticlesSuccess = response => ({
-  type: FETCH_ARTICLES_SUCCESS,
+  type: types.FETCH_ARTICLES_SUCCESS,
   response
 });
 
 export const fetchArticlesError = error => ({
-  type: FETCH_ARTICLES_ERROR,
+  type: types.FETCH_ARTICLES_ERROR,
   error
 });
 
 export const infiniteLoadingStart = () => ({
-  type: INFINITE_LOADING_START
+  type: types.INFINITE_LOADING_START
 });
 
 export const fetchArticles = page => async (dispatch, getState) => {
-  const _page = page || getState().articles.page || 1;
+  const _page = page || getState().articles.nextPage || 1;
   dispatch(fetchArticlesRequest(_page));
 
   try {
-    const data = await fetch(
-      `${API_ROOT}/articles?page=${_page}`
-    ).then(response => response.json());
-    dispatch(fetchArticlesSuccess(data));
+    const response = await axios(`${API_ROOT}/articles`, {
+      params: {
+        page: _page
+      }
+    });
+    dispatch(fetchArticlesSuccess(response.data));
   } catch (e) {
-    dispatch(fetchArticlesError(e));
+    dispatch(fetchArticlesError(e.response.data));
   }
 };
 
 export const loadMoreHandler = () => async dispatch => {
   dispatch(infiniteLoadingStart());
   await timeoutPromise(2000);
-  dispatch(fetchArticles());
+  return dispatch(fetchArticles()); //todo explain why need to return
 };
