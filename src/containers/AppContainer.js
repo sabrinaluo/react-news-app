@@ -5,8 +5,4 @@ import App from "../components/App";
 
 const AppContainer = props => <App {...props} />;
 
-const mapStateToProps = state => {
-  return {};
-};
-
 export default connect(null)(AppContainer);

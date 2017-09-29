@@ -12,7 +12,6 @@ export const submitSignupForm = (username, password, password2) => {
   return dispatch => {
     const users = getStorage(DB_USERS) || {};
     const isUserExists = Boolean(users[username]);
-    let errorMessage = "Error";
 
     if (isUserExists) {
       return dispatch(signupError("username has been taken!"));
