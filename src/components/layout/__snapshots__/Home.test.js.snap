@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Home 1`] = `
+<section>
+  <div
+    className="wrapper"
+  >
+    <Connect(ArticleListContainer) />
+  </div>
+</section>
+`;

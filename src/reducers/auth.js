@@ -1,12 +1,12 @@
-import { LOGIN_ERROR, SIGNUP_ERROR } from "../actions";
+import * as types from "../constants/ActionTypes";
 
 function auth(state = {}, action) {
   switch (action.type) {
-    case LOGIN_ERROR:
+    case types.LOGIN_ERROR:
       return Object.assign({}, state, {
         error: action.error
       });
-    case SIGNUP_ERROR:
+    case types.SIGNUP_ERROR:
       return Object.assign({}, state, {
         error: action.error
       });

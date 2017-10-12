@@ -1,13 +1,13 @@
-import { USER_LOGIN, USER_LOGOUT } from "../actions/user";
+import * as types from "../constants/ActionTypes";
 
 function user(state = {}, action) {
   switch (action.type) {
-    case USER_LOGIN:
+    case types.USER_LOGIN:
       return Object.assign({}, state, {
         isLogin: true,
         username: action.username
       });
-    case USER_LOGOUT:
+    case types.USER_LOGOUT:
       return Object.assign({}, state, {
         isLogin: false,
         username: ""
