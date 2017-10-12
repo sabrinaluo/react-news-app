@@ -4,6 +4,9 @@ import thunk from "redux-thunk";
 import * as actions from "../actions/login";
 import * as types from "../constants/ActionTypes";
 
+import { getStorage, setStorage } from "../utils";
+import { DB_USERS } from "../constants";
+
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
@@ -49,7 +52,7 @@ describe("submit login form", () => {
       }
     ];
 
-    localStorage.setItem("DB_USERS", JSON.stringify({ [username]: password }));
+    setStorage(DB_USERS, { [username]: password });
 
     store.dispatch(actions.submitLoginForm(username, password));
     expect(store.getActions()).toEqual(expectedActions);
