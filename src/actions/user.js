@@ -1,16 +1,14 @@
-export const USER_LOGIN = "USER_LOGIN";
-export const USER_SIGN_UP = "USER_SIGN_UP";
-export const USER_LOGOUT = "USER_LOGOUT";
+import * as types from "../constants/ActionTypes";
 
 export const userLogin = username => dispatch => {
   dispatch({
-    type: USER_LOGIN,
+    type: types.USER_LOGIN,
     username
   });
 };
 
 export const userLogout = () => dispatch => {
   dispatch({
-    type: USER_LOGOUT
+    type: types.USER_LOGOUT
   });
 };

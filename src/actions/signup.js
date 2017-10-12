@@ -1,10 +1,10 @@
+import * as types from "../constants/ActionTypes";
 import { userLogin } from "./user";
 import { getStorage, setStorage } from "../utils";
 import { DB_USERS } from "../constants";
 
-export const SIGNUP_ERROR = "SIGNUP_ERROR";
 export const signupError = error => ({
-  type: SIGNUP_ERROR,
+  type: types.SIGNUP_ERROR,
   error
 });
 

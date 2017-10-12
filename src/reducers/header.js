@@ -1,12 +1,12 @@
-import { ENABLE_HEADER_STICKY, DISABLE_HEADER_STICKY } from "../actions";
+import * as types from "../constants/ActionTypes";
 
 function header(state = {}, action) {
   switch (action.type) {
-    case ENABLE_HEADER_STICKY:
+    case types.ENABLE_HEADER_STICKY:
       return Object.assign({}, state, {
         isSticky: true
       });
-    case DISABLE_HEADER_STICKY:
+    case types.DISABLE_HEADER_STICKY:
       return Object.assign({}, state, {
         isSticky: false
       });
