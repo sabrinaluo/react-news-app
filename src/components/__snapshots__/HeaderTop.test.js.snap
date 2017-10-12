@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render login 1`] = `
+<div
+  class="menu__top"
+>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="container float_left"
+      >
+        Hello 
+        <a
+          aria-current="false"
+          href="/welcome"
+        >
+           test@test.com 
+        </a>
+        :)
+      </div>
+      <div
+        class="container float_right"
+      >
+        <a
+          aria-current="false"
+          href="/logout"
+        >
+           Logout 
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render not login 1`] = `
+<div
+  class="menu__top"
+>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="container float_right"
+      >
+        <a
+          aria-current="false"
+          href="/login"
+        >
+           Login 
+        </a>
+        <a
+          aria-current="false"
+          href="/signup"
+        >
+           Sign Up 
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
